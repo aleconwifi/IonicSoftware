@@ -1,0 +1,60 @@
+<div class="row animated fadeIn">
+
+    <div class="col-md-6">
+        <div class="card card-body">
+            <h3 class="box-title m-b-0">Inmueble: {{ inmueble.nombre }}</h3>
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarInmueble(f)">
+                        <div class="form-group">
+                            <label>Nombre del inmueble casa/apartamento</label>
+                            <input [(ngModel)]="inmueble.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre inmueble" required>
+
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Descripción del inmueble</label>
+                            <input [(ngModel)]="inmueble.descripcion" name="descripcion" type="text" class="form-control" placeholder="Descripción" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Precio del inmueble</label>
+                            <input [(ngModel)]="inmueble.precio" name="precio" type="text" class="form-control" placeholder="Bs" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tipo de Operacion Venta/Alquiler</label>
+                            <input [(ngModel)]="inmueble.operacion" name="operacion" type="text" class="form-control" placeholder="Opera" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Estado del pais</label>
+                            <input [(ngModel)]="inmueble.estado" name="estado" type="text" class="form-control" placeholder="Estado" required>
+                        </div>
+                       
+                     
+
+                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                        <i class="fa fa-save"></i>
+                        Guardar
+                      </button>
+                        <a routerLink="/inmuebles" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <div class="col-md-4" *ngIf="inmueble._id">
+        <div class="card card-body">
+            <h4 class="box-title m-b-0">Fotografía</h4>
+
+            <img (click)="cambiarFoto()" [src]="inmueble.img | imagen:'inmueble'" class="rounded img-fluid pointer">
+        </div>
+    </div>
+
+</div>

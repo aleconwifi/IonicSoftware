@@ -1,0 +1,53 @@
+<div class="row animated fadeIn">
+
+  <div class="col-md-6">
+      <div class="card card-body">
+          <h3 class="box-title m-b-0">Inmueble: {{ inmueble.nombre }}</h3>
+          <div class="row">
+              <div class="col-sm-12 col-xs-12">
+                  <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarInmueble(f)">
+                      <div class="form-group">
+                          <label>Ubicación del inmueble</label>
+                           <h3 class="box-title m-b-0">Inmueble: {{ inmueble.nombre }}</h3>
+
+
+                      </div>
+
+                      <div class="form-group">
+                          <h3 class="box-title m-b-0">Inmueble: {{ inmueble.descripcion }}</h3>
+                      </div>
+
+                      <div class="form-group">
+                        <h3 class="box-title m-b-0">Precio: {{ inmueble.precio }}</h3>
+                    </div>
+
+                    <div class="form-group">
+                      <h3 class="box-title m-b-0">Operacion: {{ inmueble.operacion }}</h3>
+                  </div>
+
+                  <div class="form-group">
+                    <h3 class="box-title m-b-0">Estado: {{ inmueble.estado }}</h3>
+                </div>
+
+                   
+
+                      
+                      <a routerLink="/dashboard" class="btn btn-inverse waves-effect waves-light">atras</a>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  
+
+  <div class="col-md-4" *ngIf="inmueble._id">
+      <div class="card card-body">
+          <h4 class="box-title m-b-0">Fotografía</h4>
+
+          <img [src]="inmueble.img | imagen:'inmueble'" class="rounded img-fluid pointer">
+      </div>
+  </div>
+
+</div>

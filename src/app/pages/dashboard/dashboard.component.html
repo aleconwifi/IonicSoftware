@@ -1,0 +1,22 @@
+<div class="card-columns">
+
+    <div class="card animated fadeIn fast" *ngFor="let inmueble of inmuebles">
+        >
+        <img [src]="inmueble.img | imagen:'inmueble'" class="card-img-top img-fluid">
+        <div class="card-block">
+            <h5 class="card-title">{{inmueble.nombre}}</h5>
+            <p class="card-text">{{inmueble.descripcion}}</p>
+
+
+             <button [routerLink]="['/inmueble3', inmueble._id ]" class="btn btn-outline-primary btn-block">
+                                    <i class="mdi mdi-library-plus">Ver mas ...</i>
+                                  </button>
+
+                                  <button [routerLink]="['/inmueble3', inmueble._id ]" class="btn btn-outline-danger btn-block">
+                                    <i class="mdi mdi-heart"> Me Gusta </i>
+                                  </button>       
+
+        </div>
+
+
+    </div>

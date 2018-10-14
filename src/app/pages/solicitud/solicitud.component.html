@@ -1,0 +1,15 @@
+
+<div class="card">
+  <div class="el-card-item" *ngIf="!mostrarDatos">
+      <div class="el-card-avatar el-overlay-1"> <img [src]="usuario.img | imagen:'usuario'" alt="user" />
+          <div class="el-overlay">
+              <ul class="el-info">
+                  <li><a class="btn default btn-outline" (click)="activar()"><i class="icon-heart"></i>Enviar solicitud</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="el-card-content">
+          <h3 class="box-title">{{usuario.nombre}}</h3> <small>{{usuario.email}}</small>
+          <br/> </div>
+  </div>
+</div>
